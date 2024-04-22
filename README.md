@@ -1,7 +1,7 @@
 ### NOTE-TYPE
 
 #TASKS
-- [ ] INIT THE PROJECT
+- [X] INIT THE PROJECT
     
 - [ ] #BACKEND
       
