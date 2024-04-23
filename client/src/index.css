@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+	font-family: 'TransformaMix';
+	src: url('./assets/Font/TransformaMix-ExtraLight-BF660ca8e1ba095.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaMix-Light-BF660ca8e1ac32b.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaMix-Medium-BF660ca8e10d190.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaMix-Regular-BF660ca8e12185b.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaMix-SemiBold-BF660ca8e1a26a1.otf')
+			format('opentype');
+}
+
+@font-face {
+	font-family: 'TransformaSans';
+	src: url('./assets/Font/TransformaSans-Black-BF660ca8e05d182.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaSans-Bold-BF660ca8e06490f.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaSans-ExtraBlack-BF660ca8e06a42c.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaSans-ExtraBold-BF660ca8e06ac5b.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaSans-Extralight-BF660ca8e04b886.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaSans-Light-BF660ca8e073548.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaSans-Medium-BF660ca8e0964ef.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaSans-Regular-BF660ca8e0469c7.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaSans-SemiBold-BF660ca8e083343.otf')
+			format('opentype');
+}
+
+@font-face {
+	font-family: 'TransformaScript';
+	src: url('./assets/Font/TransformaScript-Light-BF660ca8de6c78b.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaScript-Medium-BF660ca8df94ba1.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaScript-Regular-BF660ca8df840d2.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaScript-SemiBold-BF660ca8dfdec41.otf')
+			format('opentype'),
+		url('./assets/Font/TransformaScript-ExtraLight-BF660ca8dca5c7b.otf')
+			format('opentype');
+}
+.font-transforma-sans {
+	font-family: 'TransformaSans', sans-serif;
+}
+.font-transforma-script {
+	font-family: 'TransformaScript', cursive;
+}
+.font-transforma-mix {
+	font-family: 'TransformaMix', sans-serif;
+}
