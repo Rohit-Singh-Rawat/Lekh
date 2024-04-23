@@ -1,7 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
-import { FolderSchema } from './folder.model';
 
-interface FileDocument extends mongoose.Document {
+export interface FileDocument extends mongoose.Document {
 	workspaceId: mongoose.Schema.Types.ObjectId;
 	title: string;
 	data: string;
@@ -11,7 +10,7 @@ interface FileDocument extends mongoose.Document {
 	folderId: mongoose.Schema.Types.ObjectId;
 }
 
-const FileSchema: mongoose.Schema<FileDocument> = new Schema(
+export const FileSchema: mongoose.Schema<FileDocument> = new Schema(
 	{
 		workspaceId: {
 			type: mongoose.Schema.Types.ObjectId,

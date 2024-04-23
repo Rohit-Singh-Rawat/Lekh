@@ -1,7 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-interface FolderDocument extends mongoose.Document {
-	workspaceId: mongoose.Schema.Types.ObjectId;
+export interface FolderDocument extends mongoose.Document {
 	title: string;
 	data: string;
 	banner_url: string;
@@ -11,11 +10,7 @@ interface FolderDocument extends mongoose.Document {
 
 export const FolderSchema: mongoose.Schema<FolderDocument> = new Schema(
 	{
-		workspaceId: {
-			type: mongoose.Schema.Types.ObjectId,
-			required: true,
-			ref: 'workspace',
-		},
+		
 		title: { type: String, required: true },
 		data: String,
 		banner_url: String,
