@@ -1,22 +1,62 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/Images/LandingPage/Lekh Main Logo Transparent bg.svg';
-
+import { ChangeEvent, FormEvent, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import LekhIcon from '../components/LandingPage/LekhIcon';
 const Login = () => {
+	interface UserInfo {
+		email: string;
+		password: string;
+	}
+
+	const [signinInfo, setSigninInfo] = useState<UserInfo>({
+		email: '',
+		password: '',
+	});
+
+	const [passwordType, setPasswordType] = useState<string>('password');
+
+	const handleToogle: () => void = () => {
+		passwordType === 'password'
+			? setPasswordType('text')
+			: setPasswordType('password');
+	};
+
+	const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+		e.preventDefault();
+		if (signinInfo.email.trim() == '' || signinInfo.password.trim() == '') {
+			toast.error('Fill all credentials');
+		} else {
+			toast.success('Form Submitted');
+		}
+	};
 	return (
 		<div className='h-screen w-full bg-[#090C10] min-h-screen font-transforma-mix gap-4 flex-col flex justify-center items-center    bg-grid-blue-900/[0.1]  relative  '>
+			<ToastContainer
+				position='bottom-right'
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme='dark'
+				stacked
+			></ToastContainer>
 			<div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,#090C10)]'></div>
 			<div>
 				<Link to='/'>
-					<img
-						src={logo}
-						alt=''
-						className='w-26 h-12 '
+					<LekhIcon
+						width={150}
+						height={55}
 					/>
 				</Link>
 			</div>
 			<div className='backdrop-blur-sm text-white  bg-white/5 p-10 rounded-3xl min-w-[400px] w-[23vw] min-h-[65vh]'>
 				<form
-					action=''
+					onSubmit={(e) => handleSubmit(e)}
 					className='flex flex-col gap-4'
 				>
 					<div className='flex flex-col gap-3'>
@@ -27,6 +67,9 @@ const Login = () => {
 							id=''
 							placeholder='Email address'
 							className='rounded-3xl text-white outline-none p-2 pl-4 bg-white/10 border-[1px]'
+							onChange={(e: ChangeEvent<HTMLInputElement>) =>
+								setSigninInfo((info) => ({ ...info, email: e.target.value }))
+							}
 						/>
 					</div>
 					<div className='flex flex-col gap-3'>
@@ -37,6 +80,9 @@ const Login = () => {
 							id=''
 							placeholder='Password'
 							className='rounded-3xl text-white outline-none p-2 pl-4 bg-white/10 border-[1px]'
+							onChange={(e: ChangeEvent<HTMLInputElement>) =>
+								setSigninInfo((info) => ({ ...info, password: e.target.value }))
+							}
 						/>
 					</div>
 
