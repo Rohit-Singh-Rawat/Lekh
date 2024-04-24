@@ -1,18 +1,49 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import { boolean } from 'zod';
 
-export interface UserDocument extends mongoose.Document{
-    fullName: string,
-    avatarUrl: string,
-    email:string,
-    password:string,
+export interface UserDocument extends mongoose.Document {
+	name: string;
+	email: string;
+	password: string;
+	isDarkMode: boolean;
+	profilePicture: string;
+	workspaces: mongoose.Schema.Types.ObjectId[];
+	createdAt: Date;
+	updatedAt?: Date;
 }
 
-export const UserSchema: mongoose.Schema<UserDocument> = new mongoose.Schema({
-	fullName: { type: String, required: true },
-	avatarUrl: String,
-	email: { type: String, required: true },
-	password: { type: String, required: true },
-});
+export const UserSchema: mongoose.Schema<UserDocument> = new mongoose.Schema(
+	{
+		name: { type: String, required: true },
+		isDarkMode: { type: Boolean, default: false },
+		profilePicture: String,
+		email: { type: String, required: true },
+		password: { type: String, required: true },
+		workspaces: {
+			type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Workspace' }],
 
-const User  = mongoose.model<UserDocument>('User', UserSchema)
-export default User
+			required: true,
+		},
+	},
+	{
+		timestamps: true,
+	}
+);
+
+const _preDelete = async function (
+	this: UserDocument,
+	next: mongoose.CallbackWithoutResultAndOptionalError
+) {
+	console.log(this);
+};
+UserSchema.pre<UserDocument>(
+	'deleteOne',
+	{ document: false, query: true },
+	_preDelete
+);
+
+const User: mongoose.Model<UserDocument> = mongoose.model<UserDocument>(
+	'User',
+	UserSchema
+);
+export default User;

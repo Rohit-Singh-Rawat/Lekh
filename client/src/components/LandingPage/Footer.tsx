@@ -1,4 +1,4 @@
-import React from 'react'
+
 import github from '../../assets/Images/LandingPage/github.svg'
 import x from '../../assets/Images/LandingPage/twitter.svg';
 const Footer = () => {
