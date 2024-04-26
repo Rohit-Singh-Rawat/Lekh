@@ -18,11 +18,11 @@ const Signup = () => {
 
 	const [passwordType, setPasswordType] = useState<string>('password');
 
-	const handleToogle: () => void = () => {
-		passwordType === 'password'
-			? setPasswordType('text')
-			: setPasswordType('password');
-	};
+	// const handleToogle: () => void = () => {
+	// 	passwordType === 'password'
+	// 		? setPasswordType('text')
+	// 		: setPasswordType('password');
+	// };
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
