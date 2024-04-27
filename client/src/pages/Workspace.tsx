@@ -1,9 +1,14 @@
-
-
+import Navbar from "../components/Workspace/Navbar";
+import Sidebar from "../components/Workspace/Sidebar";
 const Workspace = () => {
-  return (
-    <div>Workspace</div>
-  )
-}
+	return <div className="flex bg-custom">
+  <Sidebar></Sidebar>
+  <div className="w-full">
+    <Navbar>
 
-export default Workspace
+    </Navbar>
+  </div>
+  </div>;
+};
+
+export default Workspace;

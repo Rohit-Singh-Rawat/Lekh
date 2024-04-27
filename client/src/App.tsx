@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import Signup from './pages/SignUp';
+import Workspace from './pages/Workspace';
 
 function App() {
 	return (
@@ -25,6 +26,12 @@ function App() {
 					path='/signup'
 					element={<Signup/>}
 				></Route>
+				<Route
+				path='/workspace'
+				element={<Workspace/>}
+				>
+
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);

@@ -12,7 +12,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        custom: '#090C10',
+      },
+},
   }, plugins: [
     function ({ matchUtilities, theme }) {
       matchUtilities(
