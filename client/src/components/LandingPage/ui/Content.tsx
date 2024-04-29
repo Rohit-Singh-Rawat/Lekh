@@ -1,5 +1,5 @@
 import { NavigateFunction, useNavigate } from 'react-router-dom';
-import img from '../../assets/Images/LandingPage/img.svg';
+import img from '../../../assets/Images/LandingPage/img.svg';
 const Content = () => {
 	const navigate: NavigateFunction = useNavigate();
 	return (

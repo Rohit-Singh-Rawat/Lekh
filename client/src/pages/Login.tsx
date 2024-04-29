@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
-import LekhIcon from '../components/LandingPage/LekhIcon';
+import LekhIcon from '../components/LandingPage/icons/LekhIcon';
 const Login = () => {
 	interface UserInfo {
 		email: string;

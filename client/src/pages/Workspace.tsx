@@ -1,5 +1,5 @@
-import Navbar from "../components/Workspace/Navbar";
-import Sidebar from "../components/Workspace/Sidebar";
+import Navbar from "../components/Workspace/ui/Navbar";
+import Sidebar from "../components/Workspace/ui/Sidebar";
 const Workspace = () => {
 	return <div className="flex bg-custom">
   <Sidebar></Sidebar>

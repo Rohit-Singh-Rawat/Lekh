@@ -1,7 +1,6 @@
-
-import Navbar from '../components/LandingPage/Navbar';
-import Content from '../components/LandingPage/Content'
-import Footer from '../components/LandingPage/Footer';
+import Navbar from '../components/LandingPage/ui/Navbar';
+import Content from '../components/LandingPage/ui/Content';
+import Footer from '../components/LandingPage/ui/Footer';
 
 const LandingPage = () => {
 	return (

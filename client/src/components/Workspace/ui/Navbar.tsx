@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import FavouriteIcon from '../icons/favouriteIcon';
+
 
 const Navbar = () => {
 	const [currentPage, setCurrentPage] = useState({
@@ -11,6 +13,9 @@ const Navbar = () => {
 			<div className='flex gap-6'>
 				<div className='text-slate-400 bg-slate-900 p-1 px-3 rounded-full flex justify-center items-center'>
 					Share
+				</div>
+				<div>
+					<FavouriteIcon starred={false}/>
 				</div>
 				<div className=' bg-slate-900 p-1 px-2 rounded-full flex justify-center items-center'>
 					<svg

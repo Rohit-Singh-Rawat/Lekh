@@ -1,6 +1,6 @@
 
-import github from '../../assets/Images/LandingPage/github.svg'
-import x from '../../assets/Images/LandingPage/twitter.svg';
+import github from '../../../assets/Images/LandingPage/github.svg'
+import x from '../../../assets/Images/LandingPage/twitter.svg';
 const Footer = () => {
   return (
 		<div className='bottom-0 flex justify-between items-center border-[#013339] px-10 absolute p-3 border-t-[1px] w-full'>

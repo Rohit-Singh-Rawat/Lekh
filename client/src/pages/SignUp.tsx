@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import LekhIcon from '../components/LandingPage/LekhIcon';
+import LekhIcon from '../components/LandingPage/icons/LekhIcon';
 
 const Signup = () => {
 	interface UserInfo {

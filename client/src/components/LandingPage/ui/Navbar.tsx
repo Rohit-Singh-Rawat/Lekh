@@ -1,10 +1,8 @@
-
 import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
-import LekhIcon from './LekhIcon';
+import LekhIcon from '../icons/LekhIcon';
 const Navbar = () => {
-    
 	const navigate: NavigateFunction = useNavigate();
-  return (
+	return (
 		<nav className='border-b-[1px] flex justify-between px-10 border-[#06e1f9] pb-2'>
 			<Link to={'/'}>
 				<LekhIcon
@@ -21,6 +19,6 @@ const Navbar = () => {
 			</button>
 		</nav>
 	);
-}
+};
 
-export default Navbar
+export default Navbar;
