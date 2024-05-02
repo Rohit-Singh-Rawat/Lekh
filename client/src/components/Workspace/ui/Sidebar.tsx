@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AddBtn from './AddBtn';
 import SidebarItem from './SidebarItem';
+import ChevronLeft from './ChevronLeft';
 const Sidebar = () => {
 	const userProfile = {
 		name: 'Rohit Singh Rawat',
@@ -29,7 +30,7 @@ const Sidebar = () => {
 	const [showFavourite, SetShowFavourite] = useState<boolean>(true);
 	const [showPages, SetShowPages] = useState<boolean>(true);
 	return (
-		<aside className='w-[250px] h-screen bg-custom text-white flex flex-col gap-5 border-r-[1px] border-[#20364f]'>
+		<aside className='group/sidebar w-[250px]  fixed h-screen bg-custom text-white flex flex-col gap-5 border-r-[0.08px] border-[#20364f]'>
 			<div>
 				<SidebarItem>
 					<div className='flex gap-2'>
@@ -42,11 +43,14 @@ const Sidebar = () => {
 						</div>
 						<div className='w-[11ch] truncate'>{userProfile.name}</div>
 					</div>
-					<div className='size-8 rounded hover:bg-[#060e18] p-1 flex justify-center items-center'>
+					<div className='size-8 flex justify-center items-center opacity-0 transition-all group-hover/sidebar:opacity-100  hover:bg-custom/40 rounded p-1'>
+						<ChevronLeft/>
+					</div>
+					<div className='size-8 rounded hover:bg-custom/40 p-1 flex justify-center items-center'>
 						<svg
 							role='graphics-symbol'
 							viewBox='0 0 24 24'
-							className='createPage size-7 fill-current'
+							className='createPage size-6 fill-current'
 						>
 							<g>
 								<path
@@ -132,6 +136,9 @@ const Sidebar = () => {
 					<span>Trash</span>
 				</div>
 			</SidebarItem>
+			<div className='opacity-0 bg-slate-500 group-hover/sidebar:opacity-100 transition-all cursor-ew-resize h-full w-[2px] absolute top-0 right-0'>
+
+			</div>
 		</aside>
 	);
 };

@@ -8,7 +8,7 @@ const Navbar = () => {
 		title: 'Page 1',
 	});
 	return (
-		<nav className='bg-custom text-white px-20 border-b-2 p-4 border-[#20364f] flex justify-between items-center'>
+		<nav className='bg-custom text-white pl-20 pr-10 border-b-2 p-4 border-[#20364f] flex justify-between items-center'>
 			<div>{currentPage.title}</div>
 			<div className='flex gap-6'>
 				<div className='text-slate-400 bg-slate-900 p-1 px-3 rounded-full flex justify-center items-center'>
